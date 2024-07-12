@@ -8,7 +8,10 @@ export default function CharacterItem({ id, name, status, species, image }) {
   };
 
   return (
-    <div className="rounded-md shadow" onClick={onItemClickHandle}>
+    <div
+      className="cursor-pointer rounded-md shadow hover:shadow-md hover:shadow-lime-400"
+      onClick={onItemClickHandle}
+    >
       <img
         src={image}
         alt={name}
