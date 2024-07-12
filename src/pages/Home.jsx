@@ -33,7 +33,7 @@ export default function Home() {
       <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
         <CharactersList characters={data.characters.results} />
       </div>
-      <div className="flex items-center justify-center gap-2">
+      <div className="flex items-center justify-center gap-2 sm:gap-4">
         <PaginationButton onPrev={handlePrevPage} onNext={handleNextPage} />
         <PaginationNumber
           currentPage={currentPage}
