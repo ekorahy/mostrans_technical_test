@@ -1,11 +1,11 @@
-import { atom } from 'recoil';
+import { atom } from "recoil";
 
 export const currentPageState = atom({
-  key: 'currentPageState',
+  key: "currentPageState",
   default: 1,
 });
 
 export const locationsState = atom({
-  key: 'locationsState',
-  default: JSON.parse(localStorage.getItem('locations')) || {},
+  key: "locationsState",
+  default: JSON.parse(localStorage.getItem("locations")) || {},
 });

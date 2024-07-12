@@ -8,7 +8,7 @@ export default function CharacterByLocation() {
   const [selectedLocation, setSelectedLocation] = useState(null);
 
   return (
-    <div className="container mx-auto p-4">
+    <section className="container mx-auto p-4">
       <h2 className="mb-6 text-center text-3xl font-bold">
         Character by Location
       </h2>
@@ -32,7 +32,7 @@ export default function CharacterByLocation() {
         )}
       </div>
       {selectedLocation && (
-        <div className="mt-8">
+        <section className="mt-8">
           <h2 className="mb-6 text-center text-2xl font-bold">
             Characters in {selectedLocation}
           </h2>
@@ -48,8 +48,8 @@ export default function CharacterByLocation() {
               />
             ))}
           </div>
-        </div>
+        </section>
       )}
-    </div>
+    </section>
   );
 }
