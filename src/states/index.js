@@ -5,3 +5,7 @@ export const currentPageState = atom({
   default: 1,
 });
 
+export const locationsState = atom({
+  key: 'locationsState',
+  default: JSON.parse(localStorage.getItem('locations')) || {},
+});
