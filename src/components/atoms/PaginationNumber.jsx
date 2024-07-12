@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function PaginationNumber({ currentPage, totalPage }) {
   return (
     <p>
@@ -5,3 +7,8 @@ export default function PaginationNumber({ currentPage, totalPage }) {
     </p>
   );
 }
+
+PaginationNumber.propTypes = {
+  currentPage: PropTypes.number.isRequired,
+  totalPage: PropTypes.number.isRequired,
+};
