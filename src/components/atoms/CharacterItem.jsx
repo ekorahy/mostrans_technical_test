@@ -22,7 +22,7 @@ export default function CharacterItem({ id, name, status, species, image }) {
   };
 
   return (
-    <div
+    <section
       className="cursor-pointer rounded-md shadow hover:shadow-md hover:shadow-cyan-400"
       onClick={onItemClickHandle}
     >
@@ -44,7 +44,7 @@ export default function CharacterItem({ id, name, status, species, image }) {
           <p className="line-clamp-1">{species}</p>
         </div>
       </div>
-    </div>
+    </section>
   );
 }
 
