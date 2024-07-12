@@ -17,6 +17,9 @@ export default function App() {
           <Route path="/location" element={<CharacterByLocation />} />
         </Routes>
       </main>
+      <footer>
+        <p className="p-4 text-center">&copy; 2024 - Rick And Morty</p>
+      </footer>
     </div>
   );
 }
