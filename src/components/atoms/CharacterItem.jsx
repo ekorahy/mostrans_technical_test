@@ -15,7 +15,7 @@ export default function CharacterItem({ id, name, status, species, image }) {
         className="h-48 w-full rounded object-cover"
       />
       <div className="p-4">
-        <h3 className="text-2xl line-clamp-1 mb-1 font-bold">{name}</h3>
+        <h3 className="mb-1 line-clamp-1 text-2xl font-bold">{name}</h3>
         <div className="flex items-center gap-2">
           <div className="h-4 w-4 rounded-full bg-cyan-400"></div>
           <p>{status}</p>
