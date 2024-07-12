@@ -2,6 +2,11 @@
 @tailwind components;
 @tailwind utilities;
 
-.btn-pagination {
-  @apply rounded-md bg-cyan-400 px-3 py-2 hover:bg-cyan-500 flex items-center gap-2;
+body {
+  @apply font-quicksand;
 }
+
+.btn-pagination {
+  @apply flex items-center gap-2 rounded-md bg-cyan-400 px-3 py-2 text-white hover:bg-cyan-500;
+}
+

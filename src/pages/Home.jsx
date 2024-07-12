@@ -5,6 +5,9 @@ import { useRecoilState } from "recoil";
 import { currentPageState } from "../states";
 import PaginationButton from "../components/atoms/PaginationButton";
 import PaginationNumber from "../components/atoms/PaginationNumber";
+import CharacterItemLoading from "../components/atoms/CharacterItemLoading";
+import PaginationNumberLoading from "../components/atoms/PaginationNumberLoading";
+import ErrorMessage from "../components/atoms/ErrorMessage";
 
 export default function Home() {
   const [currentPage, setCurrentPage] = useRecoilState(currentPageState);
@@ -24,21 +27,29 @@ export default function Home() {
     }
   };
 
-  if (loading) return <p>Loading ...</p>;
-
-  if (error) return <p>Error: {error.message}</p>;
+  if (error) return <ErrorMessage message={error.message} />;
 
   return (
     <div>
-      <div className="mb-4 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
-        <CharactersList characters={data.characters.results} />
+      <div className="mb-8 grid grid-cols-1 gap-4 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4">
+        {loading ? (
+          Array.from({ length: 20 }).map((_, index) => (
+            <CharacterItemLoading key={index} />
+          ))
+        ) : (
+          <CharactersList characters={data.characters.results} />
+        )}
       </div>
       <div className="flex items-center justify-center gap-2 sm:gap-4">
         <PaginationButton onPrev={handlePrevPage} onNext={handleNextPage} />
-        <PaginationNumber
-          currentPage={currentPage}
-          totalPage={data.characters.info.pages}
-        />
+        {loading ? (
+          <PaginationNumberLoading />
+        ) : (
+          <PaginationNumber
+            currentPage={currentPage}
+            totalPage={data.characters.info.pages}
+          />
+        )}
         <PaginationButton
           prev={false}
           onPrev={handlePrevPage}

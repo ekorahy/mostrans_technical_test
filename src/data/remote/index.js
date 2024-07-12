@@ -28,6 +28,15 @@ export const GET_CHARACTER = gql`
       image
       species
       status
+      type
+      gender
+      origin {
+        name
+      }
+      location {
+        name
+      }
+      created
     }
   }
 `;
