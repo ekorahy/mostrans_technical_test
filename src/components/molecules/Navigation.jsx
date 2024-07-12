@@ -8,7 +8,7 @@ export default function Navigation() {
         <img className="h-10" src="/logo.svg" alt="logo image" />
       </Link>
       <Link
-        className="flex items-center gap-2 rounded-md p-2 hover:bg-slate-100"
+        className="flex items-center gap-2 rounded-md p-2 hover:bg-gray-100"
         to="/location"
       >
         <GoLocation /> <span className="hidden sm:block">Location</span>

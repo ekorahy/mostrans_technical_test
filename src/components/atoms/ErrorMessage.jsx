@@ -1,3 +1,5 @@
+import PropTypes from "prop-types";
+
 export default function ErrorMessage({ message }) {
   return (
     <div className="flex h-screen items-center justify-center">
@@ -7,3 +9,7 @@ export default function ErrorMessage({ message }) {
     </div>
   );
 }
+
+ErrorMessage.propTypes = {
+  message: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+};

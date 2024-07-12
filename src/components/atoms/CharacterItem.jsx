@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
 export default function CharacterItem({ id, name, status, species, image }) {
   const navigate = useNavigate();
@@ -10,11 +11,11 @@ export default function CharacterItem({ id, name, status, species, image }) {
   const getStatusColor = (status) => {
     switch (status) {
       case "Alive":
-        return "bg-lime-400";
+        return "bg-green-400";
       case "Dead":
         return "bg-red-400";
       case "unknown":
-        return "bg-slate-400";
+        return "bg-gray-400";
       default:
         return "bg-gray-400";
     }
@@ -46,3 +47,11 @@ export default function CharacterItem({ id, name, status, species, image }) {
     </div>
   );
 }
+
+CharacterItem.propTypes = {
+  id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+  name: PropTypes.string.isRequired,
+  status: PropTypes.string.isRequired,
+  species: PropTypes.string.isRequired,
+  image: PropTypes.string.isRequired,
+};

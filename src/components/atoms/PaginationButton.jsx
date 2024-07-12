@@ -1,4 +1,5 @@
 import { GrPrevious, GrNext } from "react-icons/gr";
+import PropTypes from "prop-types";
 
 export default function PaginationButton({ prev = true, onPrev, onNext }) {
   return (
@@ -17,3 +18,9 @@ export default function PaginationButton({ prev = true, onPrev, onNext }) {
     </>
   );
 }
+
+PaginationButton.propTypes = {
+  prev: PropTypes.bool,
+  onPrev: PropTypes.func.isRequired,
+  onNext: PropTypes.func.isRequired,
+};

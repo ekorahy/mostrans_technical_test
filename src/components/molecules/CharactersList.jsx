@@ -1,3 +1,4 @@
+import PropTypes from "prop-types";
 import CharacterItem from "../atoms/CharacterItem";
 
 export default function CharactersList({ characters }) {
@@ -16,3 +17,15 @@ export default function CharactersList({ characters }) {
     </>
   );
 }
+
+CharactersList.propTypes = {
+  characters: PropTypes.arrayOf(
+    PropTypes.shape({
+      id: PropTypes.oneOfType([PropTypes.string, PropTypes.number]).isRequired,
+      name: PropTypes.string.isRequired,
+      status: PropTypes.string.isRequired,
+      species: PropTypes.string.isRequired,
+      image: PropTypes.string.isRequired,
+    }),
+  ).isRequired,
+};
