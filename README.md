@@ -5,7 +5,7 @@
 ## Rick and Morty (Web App)
 
 ### Description
-A simple Rick and Morty web application that fetches data using GraphQL from [https://rickandmortyapi.com/](https://rickandmortyapi.com/) and is the result of a technical test for an application developer position at Mostrans.
+A simple Rick and Morty web application from the results of fetching data using graphQl from [https://rickandmortyapi.com/](https://rickandmortyapi.com/) and is the result of a technical test for an application developer position at Mostrans.
 
 ### Tech Stack
 - JavaScript
