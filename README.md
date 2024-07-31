@@ -5,14 +5,14 @@
 ## Rick and Morty (Web App)
 
 ### Description
-A simple Rick and Morty web application from the results of fetching data using graphQl from [https://rickandmortyapi.com/](https://rickandmortyapi.com/) and is the result of a technical test for an application developer position at Mostrans.
+A simple Rick and Morty web application from the results of fetching data using graphQl from [https://rickandmortyapi.com/](https://rickandmortyapi.com/).
 
 ### Tech Stack
 - JavaScript
 - React.js
 - GraphQL/Apollo Client
-- Recoil.js (state management)
-- Tailwind CSS (mobile-first approach and responsive design)
+- Recoil.js
+- Tailwind CSS
 - React Router
 - Vite
 
@@ -24,20 +24,20 @@ A simple Rick and Morty web application from the results of fetching data using 
 - View Character by Location
 
 ### Demo/Deploy
-[Live Demo](https://mostrans-technical-test.vercel.app/)
+[Live Demo](https://rickandmorty-ekorahy.vercel.app/)
 
 ### Repository (GitHub)
-[GitHub Repository](https://github.com/ekorahy/mostrans_technical_test)
+[GitHub Repository](https://github.com/ekorahy/RickAndMorty)
 
 ### How to Use
 
 1. **Clone the Repository**
    ```bash
-   git clone https://github.com/ekorahy/mostrans_technical_test.git
+   git clone https://github.com/ekorahy/RickAndMorty.git
 
 2. **Navigate to the Project Directory**
    ```bash
-   cd mostrans_technical_test
+   cd RickAndMorty
 3. **Install Dependencies**
    Install the required dependencies using npm or yarn:
    ```bash
