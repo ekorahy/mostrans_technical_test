@@ -45,6 +45,7 @@ export default function CharacterDetail() {
       newLocations[location] = [...newLocations[location], data.character];
       setLocations(newLocations);
       localStorage.setItem("locations", JSON.stringify(newLocations));
+      alert("Character successfully assigned!");
       setLocation("");
     } else {
       alert("Location name is required!");

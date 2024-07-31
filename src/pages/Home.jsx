@@ -1,7 +1,8 @@
 import { useQuery } from "@apollo/client";
+import { useRecoilState } from "recoil";
+import { useSearchParams } from "react-router-dom";
 import CharactersList from "../components/molecules/CharactersList";
 import { GET_CHARACTERS } from "../data/remote";
-import { useRecoilState } from "recoil";
 import { currentPageState } from "../states";
 import PaginationButton from "../components/atoms/PaginationButton";
 import PaginationNumber from "../components/atoms/PaginationNumber";
@@ -10,20 +11,32 @@ import PaginationNumberLoading from "../components/atoms/PaginationNumberLoading
 import ErrorMessage from "../components/atoms/ErrorMessage";
 
 export default function Home() {
+  const [searchParams, setSearchParams] = useSearchParams();
+  const pageParam = parseInt(searchParams.get('page')) || 1;
   const [currentPage, setCurrentPage] = useRecoilState(currentPageState);
+
+  if (currentPage !== pageParam) {
+    setCurrentPage(pageParam);
+  }
+
   const { loading, error, data } = useQuery(GET_CHARACTERS, {
     variables: { page: currentPage },
   });
 
+  const handlePageChange = (newPage) => {
+    setCurrentPage(newPage);
+    setSearchParams({ page: newPage });
+  };
+
   const handlePrevPage = () => {
     if (data.characters.info.prev) {
-      setCurrentPage(currentPage - 1);
+      handlePageChange(currentPage - 1);
     }
   };
 
   const handleNextPage = () => {
     if (data.characters.info.next) {
-      setCurrentPage(currentPage + 1);
+      handlePageChange(currentPage + 1);
     }
   };
 
@@ -41,7 +54,11 @@ export default function Home() {
         )}
       </div>
       <div className="flex items-center justify-center gap-2 sm:gap-4">
-        <PaginationButton onPrev={handlePrevPage} onNext={handleNextPage} />
+        <PaginationButton
+          onPrev={handlePrevPage}
+          onNext={handleNextPage}
+          disabled={!data?.characters?.info?.prev}
+        />
         {loading ? (
           <PaginationNumberLoading />
         ) : (
@@ -54,6 +71,7 @@ export default function Home() {
           prev={false}
           onPrev={handlePrevPage}
           onNext={handleNextPage}
+          disabled={!data?.characters?.info?.next}
         />
       </div>
     </div>
